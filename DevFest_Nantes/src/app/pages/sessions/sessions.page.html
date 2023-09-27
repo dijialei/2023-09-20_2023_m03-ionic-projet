@@ -1,0 +1,18 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Sessions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" id="sessionsList">
+  <ion-item *ngFor="let session of sessionList" routerDirection="root" [routerLink]="'/sessions/'+session.id" lines="none"
+    detail="false" routerLinkActive="selected">
+    <ion-label>{{ session.title }}</ion-label>
+    <ion-icon name="chevron-forward-outline"></ion-icon>
+    <ion-icon aria-hidden="true" slot="end" [ios]="'chevron-forward-outline'"></ion-icon>
+  </ion-item>
+</ion-content>

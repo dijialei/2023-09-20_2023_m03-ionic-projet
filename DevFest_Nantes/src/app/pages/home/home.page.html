@@ -3,7 +3,7 @@
     <ion-buttons slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ folder }}</ion-title>
+    <ion-title>Conférence</ion-title>
   </ion-toolbar>
 </ion-header>
 <br>
@@ -18,9 +18,10 @@
     <br>
   
     <ion-card-content>
-      <ion-button size="small" fill="outline" expand="block">Voir les sessions</ion-button>
+    
+    <ion-button [routerLink]="'/sessions'" size="small" fill="outline" expand="block">Voir les sessions</ion-button>
       <br>
-      <ion-button size="small" fill="outline" expand="block">Voir les présentateurs</ion-button>
+      <ion-button [routerLink]="'/presentateurs'" size="small" fill="outline" expand="block">Voir les présentateurs</ion-button>
     </ion-card-content>
   </ion-card>  
 </ion-content>

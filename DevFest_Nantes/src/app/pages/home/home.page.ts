@@ -7,11 +7,11 @@ import { Component, OnInit, inject } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  public folder!: string;
+  
   constructor() {}
 
   ngOnInit() {
-    this.folder = "Conférence";
+    
   }
 
 }
