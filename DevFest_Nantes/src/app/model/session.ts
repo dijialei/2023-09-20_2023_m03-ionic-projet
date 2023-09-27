@@ -3,5 +3,5 @@ export interface Session{
     title?:string,
     titleMobile?:string,
     description?:string,
-    speakers?:number[]
+    speakers?:string[]
 }

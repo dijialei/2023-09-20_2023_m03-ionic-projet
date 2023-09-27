@@ -1,5 +1,5 @@
 export interface Presentateur{
-    id?:number,
+    id?:string,
     name?: string,
     photoUrl?:string,
     shortBio?:string,

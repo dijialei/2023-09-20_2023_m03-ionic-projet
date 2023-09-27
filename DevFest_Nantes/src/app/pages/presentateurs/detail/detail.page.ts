@@ -11,28 +11,36 @@ import { Session } from 'src/app/model/session';
   styleUrls: ['./detail.page.scss'],
 })
 export class DetailPage implements OnInit {
-  session: Session = {};
-  speakerList:Presentateur[]=[];
+
+  speaker: Presentateur = {};
+  list:Session[]=[];
+
   constructor(private route: ActivatedRoute,
     private _sessionService: SessionsService,
-    private _presentateurService:PresentateursService
+    private _presentateurService: PresentateursService
   ) { }
 
   ngOnInit() {
-    
     this.route.paramMap.subscribe(res => {
-      this.speakerList=[];
-      this.session.id=res.get('id') as string;
-      this._sessionService.getSessions()
-        .subscribe(res => {
-          this.session=res[this.session.id as string]; 
-          this._presentateurService.getPresentateurs()
-          .subscribe(res=>{
-            this.session.speakers?.forEach(s=>{
-              this.speakerList.push(res[s]);              
-            });            
-          });
-        });
+      this.speaker.id = res.get('id') as string;
+      this._presentateurService.getPresentateurs()
+      .subscribe(res=>{
+        this.speaker=res[this.speaker.id as string];
+        this._sessionService.getSessions()
+        .subscribe(res=>{
+          for(let key in res){
+            let s:Session = res[key];
+                       
+            s.speakers?.forEach(sp=>{
+                if(sp==this.speaker.id){
+                  this.list.push(s);
+                }
+            });
+            
+           
+          }
+        });        
+      });
     });
   }
 

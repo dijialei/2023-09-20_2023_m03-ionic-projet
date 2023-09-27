@@ -19,8 +19,8 @@
     <ion-card-content>
       {{session.description}}
     </ion-card-content>
-  <ion-grid>
-    <ion-row *ngFor="let s of speakerList" class="ion-justify-content-center">
+  <ion-grid [routerLink]="'/presentateurs/'+s.id" *ngFor="let s of speakerList">
+    <ion-row  class="ion-justify-content-center">
       <ion-col size="3">
         <img alt="photo" [src]="'https://devfest2018.gdgnantes.com/'+s.photoUrl" />
       </ion-col>
