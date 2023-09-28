@@ -19,10 +19,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/note/note.module').then( m => m.NotePageModule)
   },
   {
+    path: 'information',
+    loadChildren: () => import('./pages/information/information.module').then( m => m.InformationPageModule)
+  },
+  {
     path: '**',
     redirectTo: 'home',
     pathMatch: 'full'
   }
+
 
 
 

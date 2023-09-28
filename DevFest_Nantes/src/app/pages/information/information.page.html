@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Information</ion-title>
+    <ion-icon name="chevron-back-outline" slot="start" routerLink="/home"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-content color="light">
+<ion-grid >
+  <br>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="5">Platform</ion-col>
+    <ion-col size="5">{{info.operatingSystem}}</ion-col>
+  </ion-row>
+  <br>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="5">Version</ion-col>
+    <ion-col size="5">{{info.osVersion}}</ion-col>
+  </ion-row>
+  <br>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="5">UUID</ion-col>
+    <ion-col size="5">{{uuid.identifier}}</ion-col>
+  </ion-row>
+  <br>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="5">Model</ion-col>
+    <ion-col size="5">{{info.model}}</ion-col>
+  </ion-row>
+  <br>
+  <ion-row class="ion-justify-content-center">
+    <ion-col size="5">Connection</ion-col>
+    <ion-col size="5">{{net.connectionType}}</ion-col>
+  </ion-row>
+  <br>
+</ion-grid>
+  </ion-content>
+</ion-content>
