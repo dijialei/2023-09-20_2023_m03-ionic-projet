@@ -15,10 +15,15 @@ const routes: Routes = [
     loadChildren: () => import('./pages/presentateurs/presentateurs.module').then( m => m.PresentateursPageModule)
   },
   {
+    path: 'note',
+    loadChildren: () => import('./pages/note/note.module').then( m => m.NotePageModule)
+  },
+  {
     path: '**',
     redirectTo: 'home',
     pathMatch: 'full'
   }
+
 
 
 

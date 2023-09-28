@@ -20,10 +20,9 @@ export class SessionsPage implements OnInit {
     this._sessionService.getSessions().subscribe(res=>{
             for(let key in res){
               this.sessionList.push(res[key]);
-            };
-          
-                      
+            };                     
     });
+    
   }
 
 }

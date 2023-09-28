@@ -1,0 +1,36 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "notes": [
+    {
+      "id": "test",
+      "titre": "titre test",
+      "note": "testt"
+    },
+    {
+      "id": "101",
+      "titre": "Gates open / Ouverture des portes",
+      "note": "test3"
+    },
+    {
+      "id": "110",
+      "titre": "Il développe une solution SaaS sans se soucier de la sécurité … et ça tourne mal",
+      "note": "i like"
+    }
+  ]
+}
