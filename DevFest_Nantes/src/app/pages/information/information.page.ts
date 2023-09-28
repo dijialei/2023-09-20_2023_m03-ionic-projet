@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Device } from '@capacitor/device';
+import { Network } from '@capacitor/network';
 
 
 
@@ -16,27 +17,31 @@ export class InformationPage implements OnInit {
   };
   uuid={
     identifier:""
-  }
+  };
+  net={
+    connectionType:""
+  };
 
   constructor() { }
 
   ngOnInit() {
     this.logDeviceInfo();
     this.getId();
+    this.netType();
   }
   logDeviceInfo = async () => {
      this.info = await Device.getInfo();
   };
   
-  logBatteryInfo = async () => {
-    const info = await Device.getBatteryInfo();
-  
-    console.log(info);
-  };
+ 
   getId=async () => {
     this.uuid=await Device.getId();
-    console.log(this.uuid);
     
-  }
+  };
+
+   netType = async () => {
+    this.net= await Network.getStatus();
+  };
+
 
 }
