@@ -1,16 +1,33 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [
+const routes: Routes = [  
   {
-    path: '',
-    redirectTo: 'folder/Inbox',
-    pathMatch: 'full'
+    path: 'home',
+    loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'sessions',
+    loadChildren: () => import('./pages/sessions/sessions.module').then( m => m.SessionsPageModule)
+  },
+  {
+    path: 'presentateurs',
+    loadChildren: () => import('./pages/presentateurs/presentateurs.module').then( m => m.PresentateursPageModule)
+  },
+  {
+    path: 'note',
+    loadChildren: () => import('./pages/note/note.module').then( m => m.NotePageModule)
+  },
+  {
+    path: '**',
+    redirectTo: 'home',
+    pathMatch: 'full'
   }
+
+
+
+
+
 ];
 
 @NgModule({

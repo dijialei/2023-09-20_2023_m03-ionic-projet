@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Présentateurs</ion-title>
+    <ion-icon name="chevron-back-outline" slot="start" routerLink="/presentateurs"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-text class="ion-text-center" color="dark">
+      <h1>{{speaker.name}}</h1>
+    </ion-text>
+    <ion-grid fixed>
+      <ion-row class="ion-justify-content-center">
+        <ion-col size="6">
+          <img alt="Silhouette of mountains" [src]="'https://devfest2018.gdgnantes.com/'+speaker.photoUrl" />
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-card-header>
+      <ion-card-title>Biographie</ion-card-title>
+      <ion-card-subtitle>{{speaker.shortBio}}</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-card-title>Ses présentations:</ion-card-title>
+      <ion-item  *ngFor="let l of list;index as i" routerDirection="root" [routerLink]="'/sessions/'+l.id" lines="none" detail="false" routerLinkActive="selected">
+        <ion-label>{{i+1}}. {{l.title}}</ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

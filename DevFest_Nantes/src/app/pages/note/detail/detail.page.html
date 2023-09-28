@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="ion-text-center">Mes Notes</ion-title>
+    <ion-icon name="chevron-back-outline" slot="start" routerLink="/note"></ion-icon>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{note.titre}}</ion-card-title>
+
+    </ion-card-header>
+    <ion-button (click)="save()" size="small" fill="outline" expand="block">Enregistrer</ion-button>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-textarea [(ngModel)]="text" placeholder="Type something here" [autoGrow]="true">
+        </ion-textarea>
+      </ion-item>
+    </ion-card-content>
+
+
+
+  </ion-card>
+</ion-content>
